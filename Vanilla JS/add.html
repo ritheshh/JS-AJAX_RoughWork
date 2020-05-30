@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of two numbers</title>
+    <script type="text/javascript">
+        function findSum() {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            var regx = /^([0-9]+)$/;
+            if((regx.test(num1)) && (regx.test(num2))) {
+                var sum = parseInt(num1) + parseInt(num2);
+                console.log(parseInt(num1) + parseInt(num2));
+                document.getElementById("result").innerHTML = "Sum of two numbers = " + sum;
+            }
+            else {
+                alert("Invalid input");
+                document.getElementById("result").innerHTML = "Sum of two numbers = ";
+            }
+        }
+    </script>
+</head>
+<body>
+    Number 1 <input type="text" id="num1"> <br>
+    Number 2 <input type="text" id="num2"> <br><br>
+    <button onclick="findSum()">SUM</button> <br>
+    <h1 id="result">Sum of two numbers = </h1>
+</body>
+</html>

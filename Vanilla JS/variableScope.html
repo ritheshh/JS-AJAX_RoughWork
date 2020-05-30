@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS - Variable Scope</title>
+        <script type="text/javascript">
+            var num = 10; // global variable
+            function call() {
+                square();
+            }
+            function square() {
+                alert(num);
+                var sq = num*num; 
+                /* Declaring a variable without using the keyword 'var' behaves as a global variable. 
+                    But web-browser have updated to a new standard where a derivative called 
+                    'use strict' has been introduced which restricts such undeclared variables and
+                    makes code look more cleaner. */
+                    document.getElementById("result").innerHTML = sq;
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="call()">Click</button> <br>
+        <h2 id="result"></h2>
+    </body>
+</html>

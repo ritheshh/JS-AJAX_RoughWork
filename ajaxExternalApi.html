@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External API: Ajax</title>
+    <style>
+        .user {
+            display: flex;
+            background-color: lightgray;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Get user information form GITHUB</h1>
+    <button id="button">Get</button>
+    <br><br>
+    <div id="div"></div>
+</body>
+<script>
+    document.getElementById('button').addEventListener('click', loadGithubUsers);
+
+    function loadGithubUsers() {
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('GET', 'https://api.github.com/users', true);
+
+        xhr.onload = function() {
+            if(this.status == 200) {
+                var users = JSON.parse(this.responseText);
+                var userOutput = '';
+
+                for(var i in users) {
+                    userOutput += '<div class="user">' +                    
+                        '<img src='+ users[i].avatar_url +'width="70" height="70">' +
+                        '<ul>' + 
+                        '<li>Login: ' + users[i].login + '</li>' +
+                        '<li>git -ID: ' + users[i].id + '</li>' +
+                        '</ul>' +
+                        '</div>';
+                }
+                document.getElementById("div").innerHTML = userOutput;
+            }
+        }
+
+        xhr.onerror = function() {
+            console.log('ERROR !!');
+        }
+
+        xhr.send();
+    }
+</script>
+</html>

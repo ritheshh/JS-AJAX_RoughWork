@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Regular Expression</title>
+    <script type="text/javascript">
+        function validate() {
+            var username = document.getElementById("usrnm");
+            var usernameLabel = document.getElementById("usrLabel");
+            
+            // usernameRegx = new RegExp("\s", "i"); -- second argument is optional
+            var usernameRegx = /\s/;
+            if(usernameRegx.test(username.value)) {
+                usernameLabel.innerHTML = "Blank Spaces are not accpeted.";
+                usernameLabel.style.visibility = "visible";
+                usernameLabel.style.color = "red";
+                usernameLabel.style.fontWeight = "bold";
+            }
+            else {
+                usernameLabel.innerHTML = "Valid Username";
+                usernameLabel.style.visibility = "visible";
+                usernameLabel.style.color = "green";
+                usernameLabel.style.fontWeight = "bold";
+            }
+
+            var mobileNum = document.getElementById("mobileNum");
+            var mobileNumLabel = document.getElementById("mobileNumLabel");
+
+            var numerRegx = /^[7-9]\d{9}$/;
+            if(numerRegx.test(mobileNum.value)) {
+                mobileNumLabel.innerHTML = "Valid Number";
+                mobileNumLabel.style.visibility = "visible";
+                mobileNumLabel.style.color = "green";
+                mobileNumLabel.style.fontWeight = "bold";
+            }
+            else {
+                mobileNumLabel.innerHTML = "Number doesn't exist";
+                mobileNumLabel.style.visibility = "visible";
+                mobileNumLabel.style.color = "red";
+                mobileNumLabel.style.fontWeight = "bold";
+            }
+
+            /*
+                \d - equals [0-9]
+                \w - equals [a-z A-Z 0-9 _]
+                \s - equals any white-spaces like tabs and spaces
+                \t - equals tabs only
+                ^ - 'carrot' is used to indicate the start of the text
+                $ - 'dollar' is used to indicate the end of the text
+                \. - '\' needs to be used before '.'
+                ? - means the tag before ? is optional
+                () - anything entered between () is under a tag. 
+            */
+
+            var email = document.getElementById("email");
+            var emailLabel = document.getElementById("emailLabel");
+
+            var emailRegx = /^([a-z A-Z 0-9 \. - _]+)@([a-z A-Z 0-9 -]+)\.([a-z]{2,5})(\.[a-z]{2,5})?$/;
+            if(emailRegx.test(email.value)) {
+                emailLabel.innerHTML = "Valid Email Id";
+                emailLabel.style.visibility = "visible";
+                emailLabel.style.color = "green";
+                emailLabel.style.fontWeight = "bold";
+            }
+            else {
+                emailLabel.innerHTML = "Invalid Email Id";
+                emailLabel.style.visibility = "visible";
+                emailLabel.style.color = "red";
+                emailLabel.style.fontWeight = "bold";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>username, mobile number and email validation using Regular Expression:</h1>
+        Username <input type="text" id="usrnm">
+        <label id="usrLabel" style="color: red; visibility: hidden;">
+                Invalid Username</label> <br> <br>
+        Mobile No. <input type="text" id="mobileNum" placeholder="+91">
+        <label id="mobileNumLabel" style="color: red; visibility: hidden;">
+            Invalid Number</label> <br> <br>
+        Email ID <input type="text" id="email" placeholder="@email">
+        <label id="emailLabel" style="color: red; visibility: hidden;">
+            Invalid Number</label> <br> <br>
+        <button onclick="validate()">Submit</button>
+</body>
+</html>

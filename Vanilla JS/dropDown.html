@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Drop Down</title>
+    <script type="text/javascript">
+        function submit() {
+            var option = document.getElementById("selectBox");
+            alert(option.options[option.selectedIndex].value);
+        }
+    </script>
+</head>
+<body>
+    <h2>Select a programming language to learn:</h2>
+    <select name="grp1" id="selectBox">
+        <option value="C">C</option>
+        <option value="C++">C++</option>
+        <option value="Java">Java</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Python">Python</option>
+    </select>
+    <button onclick="submit()">Submit</button>
+</body>
+</html>

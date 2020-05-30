@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Get Element: Tag & Class</title>
+    <script type="text/javascript">
+        function changeStyle() {
+            var byTag = document.getElementsByTagName("p");
+            for(var i=0; i<byTag.length; i++) {
+                byTag[i].style.fontSize = "25px";
+                byTag[i].style.fontStyle = "Italic";
+            }
+            var byClass = document.getElementsByClassName("class1");
+            for(var i=0; i<byClass.length; i++) {
+                byClass[i].style.color = "red";
+                byClass[i].style.fontWeight = "bold";
+            }
+        }
+    </script>
+</head> 
+<body>
+    <h1>JS - Get Element by Tag & Class name</h1>
+    <p class="class1">Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p class="class1">Paragraph 3</p>
+    <p>Paragraph 4</p>
+    <p class="class1">Paragraph 5</p>
+    <br><br>
+    <button onclick="changeStyle()">Change</button>
+</body>
+</html>

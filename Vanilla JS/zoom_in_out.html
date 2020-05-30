@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        imgID = 0;
+        var width;
+    
+        function increase() {
+            clearInterval(imgID);
+            width = 100;
+            imgID = setInterval(zoomIn, 20);
+        }
+        function decrease() {
+            clearInterval(imgID);
+            width = document.getElementById("img").width;
+            imgID = setInterval(zoomOut, 20);
+        }
+        function zoomIn() {
+            if(width<300) {
+                width = width + 20;
+                document.getElementById("img").width = width;
+            }
+            else {
+                clearInterval(imgID);
+            }
+        }
+        function zoomOut() {
+            if(width>100) {
+                width = width - 20;
+                document.getElementById("img").width = width;
+            }
+            else {
+                clearInterval(imgID);
+            }
+        }
+    </script>
+</head>
+<body>
+    <img src="icon.jpg" width="100px" id="img" onmouseover="increase()" onmouseout="decrease()">
+</body>
+</html>

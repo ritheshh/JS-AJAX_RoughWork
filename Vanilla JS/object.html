@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Object</title>
+    <script type="text/javascript">
+
+    function Cars(name, model, topSpeed) {
+        this.name = name;
+        this.model = model;
+        this.topSpeed = topSpeed;
+        this.vehicleType = function() 
+        {
+            document.write("Mid-weight 4 Wheel drive.");
+        }
+    }
+    var obj1 = new Cars("Maruti", 2002, 95);
+    
+    document.write(obj1.name + "<br>");
+    obj1.vehicleType();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

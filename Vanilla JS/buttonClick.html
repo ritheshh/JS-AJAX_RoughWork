@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Button Click</title>
+    <script type="text/javascript">
+        function displayAlert() {
+            var rd1 = document.getElementById("rd1");
+            var rd2 = document.getElementById("rd2");
+            if(rd1.checked == true) {
+                alert("User has clicked the button. CLick OK");
+                document.getElementById("heading").innerHTML = rd1.value;
+            }
+            else if(rd2.checked == true){
+                alert("User has clicked the button. CLick OK");
+                document.getElementById("heading").innerHTML = rd2.value;
+            }
+            else
+                alert("Please select a button.");
+        }
+    </script>
+</head>
+<body>
+    <h1 id="heading">Hello User</h1>
+    <input type="radio" name="grp1" id="rd1" value="Welcome !!">Welcome !!<br>
+    <input type="radio" name="grp1" id="rd2" value="Howdy !!">Howdy !!<br><br>
+    <button onclick="displayAlert()">Click Me</button>
+</body>
+</html>

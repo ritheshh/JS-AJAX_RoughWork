@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery: Selectors & Events</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1 id="headH1">JQuery: Selectors & Events</h1>
+    <button id="fadeOutButton">Fade out</button>
+    <button id="fadeInButton">Fade in</button>
+    <button id="fadeToggleButton">Toggle</button>
+    <div class = divClass id="divID1">
+        <p>
+            <h3>getElementById</h3>
+            $("#") is used to get element by their id in jquery.
+        </p>
+        <p>
+            <h3>getElementByTag</h3>
+            $("") tag name can be directly specified into the qoutes without braces.
+        </p>
+        <p>
+            <h3>getElementsByClass</h3>
+            $(".") class name is to be specified with a '.' in fornt of them.
+        </p>
+    </div>
+    <div class = divClass id="divID2">
+        <ul>
+          <li>List 1</li>
+          <li>List 2</li>
+          <li>List 3</li>
+          <li>List 4</li>
+          <li>List 5</li>
+        </ul>
+    </div>
+    <p id="notesPara">
+        <h3>Notes:</h3>
+        <ol>
+            <li>The special tags such as '#', '.' are same for jquery and css.</li>
+            <li></li>
+        </ol>
+    </p>
+</body>
+
+<script src="lib/jquery-3.5.0.js"></script>
+<script>
+    $(document).ready(function() {
+       
+        $("#fadeOutButton").click(function() {
+            $("#headH1").fadeOut(200);
+            $("div > ul").fadeOut(200);
+        });
+        $("#fadeInButton").click(function() {
+            $("#headH1, div > ul").fadeIn(200);
+        });
+        $("#fadeToggleButton").dblclick(function() {
+            $("#headH1").fadeToggle(200);
+            $("#notesPara").fadeToggle(200);
+        });
+        
+
+    });
+    
+</script>
+
+</html>

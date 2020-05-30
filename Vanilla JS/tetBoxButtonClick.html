@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Text Box:Button Click</title>
+    <script type="text/javascript">
+        function checkDetails() {
+            if (document.getElementById("username").value == 
+                    document.getElementById("password").value) {
+                alert("Username & Password shouldn't be same !!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <input id="username" type="text" placeholder="Username"> <br>
+    <input id="password" type="password" placeholder="Password"> <br><br>
+    <button onclick="checkDetails()">Sign-Up</button>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form: Ajax</title>
+</head>
+<body>
+    <form action="/submit" method="POST" id="postForm">
+        Name <input type="text" id="name">
+        <br>
+        Roll No. <input type="text" id="rollNo">
+        <br><br>
+        <input type="submit">
+    </form>
+</body>
+<script>
+    document.getElementById("postForm").addEventListener("submit", postForm)
+
+    function postForm(e) {
+        e.preventDefault();
+        var name = document.getElementById("name").value;
+        var rollNo = document.getElementById("rollNo").value;
+
+        var params = 'name=' + name + '&';
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('POST', 'submit', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.send(params);
+
+        xhr.onload = function() {
+            if(this.status == 200) {
+                document.write(this.responseText);
+            }
+        }
+    }
+</script>
+</html>

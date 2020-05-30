@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>INPUT:</td>
+            <td><input type="number" id="text" name="text"></td>
+            <td id="inputError"></td>
+        </tr>
+        <tr>
+            <td>OUTPUT:</td>
+            <td><input type="number" id="out" name="out"></td>
+        </tr>
+    </table>
+</body>
+<script>
+    document.getElementById("text").addEventListener("change", call)
+
+    function call() {
+        var phone = document.getElementById("text").value;
+        
+        if(phone.length != 10) {
+            document.getElementById("inputError").innerHTML = " ! Enter a 10 digit phone number !!";
+        }
+        else {
+            var regx = /^[7-9]/;
+            if(regx.test(phone)) {
+                alert("valid");
+            }
+            else {
+                alert("invalid");
+            }
+        }
+    }
+</script>
+</html>

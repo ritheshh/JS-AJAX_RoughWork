@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET & POST</title>
+</head>
+<body>
+        <button class="button" id="get">Send a GET request</button>
+        <br> <br>
+        <button class="button" id="put">Send a POST request</button>
+        <script>
+            var buttons = document.querySelectorAll('button');
+            for(var i=0; i < buttons.length; i++) {
+                console.log(event.currentTarget.id);
+                buttons[i].addEventListener('click',doAction);
+            }
+            function doAction() {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'print', true)
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhr.send();
+
+                xhr.onload = function() {
+                    if(this.status == 200) {
+                        console.log(this.responseText);
+                    }
+                }
+            }
+        </script>
+</body>
+</html>

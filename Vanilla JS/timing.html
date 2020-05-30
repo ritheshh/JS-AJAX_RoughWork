@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Timing Functions</title>
+    <script type="text/javascript">
+        var seconds=0;
+        var ID = 0;
+        function startTime() {
+            ID = window.setInterval(displayTimer, 1000);
+        }
+        function displayTimer() { 
+            document.getElementById("timer").innerHTML = seconds + "Seconds have passed !!";
+            seconds++;
+        }
+        function stopTime() {
+            window.clearInterval(ID);
+            seconds = 0;
+        }   
+    </script>
+</head>
+<body>
+    <button onclick="startTime()">Start</button> <br> <br>
+    <h1 id="timer">' 'Seconds have passed !!</h1> <br> <br>
+    <button onclick="stopTime()">Stop</button>
+</body>
+</html>
