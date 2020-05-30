@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+    body {
+        padding: 20px;
+        font-size: larger;
+    }
+    li {
+        list-style-type: none;
+        display: inline-block;
+        margin-right: 20px;
+    }
+</style>
+</head>
+<body>
+    <form>
+        Enter a number <input type="text" name="num"> <br>
+        <li><input type="submit" value="Cookie Submit" formaction="cookies_square"></li>
+        <li><input type="submit" value="URL-Rewrite Submit" formaction="urlrewrite_square"></li>
+        <li><input type="submit" value="HTTPSession Submit" formaction="httpsession_square"></li> 
+    </form>
+    <br>
+    <form action="hiddenform_sqaure"> 
+        Enter a number (Hidden form) <input type="text" name = "num"> <br>
+        <input type="submit" value="Hidden form Submit">
+    </form>
+</body>
+</html>

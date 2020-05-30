@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User: Ajax</title>
+</head>
+<body>
+    <button id="button">Get Users</button>
+    <br> <br>
+    <div id="div"></div>
+</body>
+
+<script>
+    document.getElementById("button").addEventListener("click", loadUser);
+
+    function loadUser() {
+        console.log("button clicked");
+        var xhr = new XMLHttpRequest();
+
+        xhr.open("GET", "users.json", true);
+
+        xhr.onreadystatechange = function() {
+            console.log(this.readyState);
+        }
+
+        xhr.onload = function() {
+            if(this.status == 200) {
+                var users = JSON.parse(this.responseText);
+                
+                var userOutput = "";
+                for(var i in users) {
+                // 'for in' loop in JS.
+                userOutput += "<b>Name: " + users[i].name + "</b>" + 
+                    "<ul>" +
+                    "<li>ID: " + users[i].id + "</li>" +
+                    "<li>EMail: " + users[i].email + "</li>" +
+                    "</ul>" + 
+                    "<br>";
+                }
+
+                document.getElementById("div").innerHTML = userOutput;
+            }
+        }
+        xhr.onerror == function() {
+            consol.log("ERROR !!");
+        }
+        xhr.send();
+    }
+</script>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Log-In</title>
+<style>
+    body {
+        padding: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: larger;
+    }
+    li {
+        margin-right: 20px;
+        list-style-type: none;
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+    <h3>Login - Please enter your user credentials</h3>
+    <form action="loginVerification" method="post">
+        Username <input type="text" name="usrnm" required> <br>
+        Password <input type="password" name="pwd" required> <br>
+        <li> <input type="submit" value="Log-in"> </li>
+        <li> <input type="checkbox" name="storeCookie" value="true">Stay logged-in</li>
+        
+    </form>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+
+	<servlet>
+		<servlet-name>calculator</servlet-name>
+		<servlet-class>com.twonumbers.CalcServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>calculator</servlet-name>
+		<url-pattern>/calculator</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>add</servlet-name>
+		<servlet-class>com.twonumbers.AddServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>add</servlet-name>
+		<url-pattern>/add</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>sub</servlet-name>
+		<servlet-class>com.twonumbers.SubtractServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sub</servlet-name>
+		<url-pattern>/sub</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>mul</servlet-name>
+		<servlet-class>com.twonumbers.MultiplyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mul</servlet-name>
+		<url-pattern>/mul</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>div</servlet-name>
+		<servlet-class>com.twonumbers.DivideServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>div</servlet-name>
+		<url-pattern>/div</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>teamRed</servlet-name>
+		<servlet-class>com.teaminfo.TeamServlet</servlet-class>
+		<init-param>
+			<param-name>teamColor</param-name>
+			<param-value>Red</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>teamRed</servlet-name>
+		<url-pattern>/redteam</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>teamBlue</servlet-name>
+		<servlet-class>com.teaminfo.TeamServlet</servlet-class>
+		<init-param>
+			<param-name>teamColor</param-name>
+			<param-value>Blue</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>teamBlue</servlet-name>
+		<url-pattern>/blueteam</url-pattern>
+	</servlet-mapping>
+
+	<context-param>
+		<param-name>competitionName</param-name>
+		<param-value>1800M marathon in Chennai</param-value>
+	</context-param>
+
+	<display-name>Two Numbers</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+
+<servlet>
+	<servlet-name>CookiesSquare</servlet-name>
+	<servlet-class>com.cookies.CookiesSquare</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>CookiesSquare</servlet-name>
+	<url-pattern>/cookies_square</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>CookiesResult</servlet-name>
+	<servlet-class>com.cookies.CookiesResult</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>CookiesResult</servlet-name>
+	<url-pattern>/cookies_result</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+	<servlet-name>URLRewriteSquare</servlet-name>
+	<servlet-class>com.urlrewrite.URLRewriteSquare</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>URLRewriteSquare</servlet-name>
+	<url-pattern>/urlrewrite_square</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>URLRewriteResult</servlet-name>
+	<servlet-class>com.urlrewrite.URLRewriteResult</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>URLRewriteResult</servlet-name>
+	<url-pattern>/urlrewrite_result</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+	<servlet-name>HttpSessionSquareServlet</servlet-name>
+	<servlet-class>com.httpsession.HttpSessionSquare</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>HttpSessionSquareServlet</servlet-name>
+	<url-pattern>/httpsession_square</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>HttpSessionResultServlet</servlet-name>
+	<servlet-class>com.httpsession.HttpSessionResult</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>HttpSessionResultServlet</servlet-name>
+	<url-pattern>/httpsession_result</url-pattern>
+</servlet-mapping>
+	
+	
+<servlet>
+	<servlet-name>HiddenFormSquareServlet</servlet-name>
+	<servlet-class>com.hiddenform.HiddenFormSquare</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>HiddenFormSquareServlet</servlet-name>
+	<url-pattern>/hiddenform_sqaure</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>HiddenFormResultServlet</servlet-name>
+	<servlet-class>com.hiddenform.HiddenFormResult</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>HiddenFormResultServlet</servlet-name>
+	<url-pattern>/hiddenform_result</url-pattern>
+</servlet-mapping>
+	
+
+
+
+
+
+<servlet>
+	<servlet-name>LoginVerifyServlet</servlet-name>
+	<servlet-class>com.userlogin.LoginVerify</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>LoginVerifyServlet</servlet-name>
+	<url-pattern>/loginverification</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+	<servlet-name>WelcomeUserServlet</servlet-name>
+	<servlet-class>com.userlogin.WelcomeUser</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>WelcomeUserServlet</servlet-name>
+	<url-pattern>/welcomeuser</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+	<servlet-name>LogoutServlet</servlet-name>
+	<servlet-class>com.userlogin.Logout</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>LogoutServlet</servlet-name>
+	<url-pattern>/logout</url-pattern>
+</servlet-mapping>
+
+
+
+
+	<display-name>Session Management</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
